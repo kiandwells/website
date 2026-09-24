@@ -1,6 +1,6 @@
 # Kian Dwells
 
-Portfolio site for Kian Dwells, an architecture and interior studio. The site presents projects as interactive 3D card scenes rendered in the browser with Three.js.
+Portfolio site for Kian Dwells, a luxurious serviced apartment. The site presents projects as interactive 3D card scenes rendered in the browser with Three.js.
 
 ## Stack
 
