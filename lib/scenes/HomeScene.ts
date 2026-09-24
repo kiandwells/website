@@ -133,10 +133,10 @@ export class HomeScene extends BaseScene {
   private groundPlane: THREE.Mesh;
 
   // Lights
-  private ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
-  private keyLight    = new THREE.DirectionalLight(0xffffff, 1.1);
-  private fillLight   = new THREE.DirectionalLight(0x9ee8d8, 0.5);
-  private rimLight    = new THREE.DirectionalLight(0xc66c80, 0.35);
+  private ambientLight = new THREE.AmbientLight(0xffffff, 1.4);
+  private keyLight    = new THREE.DirectionalLight(0xffffff, 2.2);
+  private fillLight   = new THREE.DirectionalLight(0x9ee8d8, 1.0);
+  private rimLight    = new THREE.DirectionalLight(0xc66c80, 0.5);
 
   constructor(
     private onCardClick: (slug: string) => void,
@@ -157,11 +157,9 @@ export class HomeScene extends BaseScene {
     this.rimLight.position.set(0, -4, -6);
     this.scene.add(this.ambientLight, this.keyLight, this.fillLight, this.rimLight);
 
-    // Ambient environment
+    // Ambient environment (particles/ground kept for dispose compat but not added to scene)
     this.ambientParticles = buildAmbientParticles();
     this.groundPlane      = buildGroundPlane();
-    this.scene.add(this.ambientParticles);
-    this.scene.add(this.groundPlane);
 
     this.camParallax = new CameraParallax(this.camera, 15);
     this.pointer     = new PointerController(this.camera);
@@ -214,7 +212,7 @@ export class HomeScene extends BaseScene {
         const texture = gallery[j]
           ? loadImageTexture(gallery[j])
           : createPlaceholderTexture(projectIndex, j, project.title);
-        const card = new CardMesh(CARD_PARAMS, texture);
+const card = new CardMesh(CARD_PARAMS, texture);
         card.name = `${projectIndex}_${j}_project_card`;
         const orbitAngle = (j / count) * Math.PI * 2;
         card.userData = {

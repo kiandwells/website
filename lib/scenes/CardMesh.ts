@@ -106,9 +106,9 @@ export class CardMesh extends THREE.Mesh {
   constructor(params: CardGeometryParams, texture: THREE.Texture) {
     const geometry = createRoundedRectGeometry(params);
     const materials = [
-      new THREE.MeshStandardMaterial({ map: texture, roughness: 0.18, metalness: 0.08 }),
-      new THREE.MeshStandardMaterial({ color: 0xf4f4f2, roughness: 0.35, metalness: 0.05 }),
-      new THREE.MeshStandardMaterial({ color: 0xc66c80, roughness: 0.25, metalness: 0.15, emissive: new THREE.Color(0xc66c80), emissiveIntensity: 0.12 }),
+      new THREE.MeshStandardMaterial({ map: texture, roughness: 0.12, metalness: 0.04, envMapIntensity: 1.2 }),
+      new THREE.MeshStandardMaterial({ color: 0x1a1c1b, roughness: 0.45, metalness: 0.08 }),
+      new THREE.MeshStandardMaterial({ color: 0x0a6b58, roughness: 0.28, metalness: 0.18, emissive: new THREE.Color(0x0a6b58), emissiveIntensity: 0.18 }),
     ];
     super(geometry, materials);
   }

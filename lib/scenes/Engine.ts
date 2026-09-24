@@ -19,6 +19,7 @@ export class Engine {
     this.renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     this.renderer.setSize(window.innerWidth, window.innerHeight);
+    this.renderer.setClearColor(0x000000, 0);
 
     this.scenes.set("home", new HomeScene(onCardClick, onHoverCard));
     this.scenes.set("about", new AboutScene());

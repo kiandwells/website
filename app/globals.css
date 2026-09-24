@@ -8,9 +8,9 @@
   --bg-body:          #eef2f0;
 
   /* Glass system */
-  --glass-bg:     rgba(255, 255, 255, 0.58);
-  --glass-border: rgba(255, 255, 255, 0.78);
-  --glass-shadow: 0 8px 48px rgba(10, 30, 28, 0.10), 0 2px 12px rgba(10, 30, 28, 0.06);
+  --glass-bg:     rgba(255, 255, 255, 0.98);
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --glass-shadow: 0 8px 48px rgba(10, 30, 28, 0.18), 0 2px 12px rgba(10, 30, 28, 0.10);
 
   --stripe-0: #0a6b58;
   --stripe-1: #0e9a7e;
@@ -47,16 +47,12 @@ html, body { height: 100%; }
 body {
   height: 100vh;
   overflow: hidden;
-  background: var(--bg-body);
+  background: transparent;
 }
 
 /* ─── Canvas vignette overlay ────────────────────────── */
 .scene-canvas::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(ellipse at 50% 50%, transparent 55%, rgba(238,242,240,0.55) 100%);
+  content: none;
 }
 
 /* ─── 3D canvas ─────────────────────────────────────── */
@@ -65,9 +61,10 @@ body {
   inset: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
+  z-index: 8;
   display: block;
   pointer-events: none;
+  background: transparent;
 }
 
 /* ─── Glass utility ──────────────────────────────────── */
@@ -128,7 +125,7 @@ body {
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  opacity: 0.55;
+  opacity: 0.75;
   transition: opacity 0.2s ease;
 }
 
@@ -413,7 +410,7 @@ body {
   font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  opacity: 0.55;
+  opacity: 0.75;
   transition: opacity 0.2s ease;
 }
 .socials a:hover { opacity: 1; }
@@ -427,8 +424,8 @@ body {
 .email-copy {
   font-size: 0.82rem;
   letter-spacing: 0.04em;
-  border-bottom: 1px dashed rgba(25,26,26,0.35);
-  opacity: 0.7;
+  border-bottom: 1px dashed rgba(25,26,26,0.45);
+  opacity: 0.9;
   transition: opacity 0.2s ease;
 }
 .email-copy:hover { opacity: 1; }
@@ -441,7 +438,7 @@ body {
 .contact-phone {
   font-size: 0.82rem;
   letter-spacing: 0.04em;
-  opacity: 0.7;
+  opacity: 0.9;
   transition: opacity 0.2s ease;
 }
 .contact-phone:hover { opacity: 1; }
@@ -453,7 +450,7 @@ body {
   font-size: 0.68rem;
   letter-spacing: 0.04em;
   text-align: right;
-  opacity: 0.75;
+  opacity: 0.9;
 }
 
 .footer-meta .location { display: block; }
@@ -669,11 +666,102 @@ body {
   opacity: 0.5;
 }
 
+/* ─── Home background photo ──────────────────────────── */
+.home-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.home-bg-img {
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.65;
+  width: 100% !important;
+  height: 100% !important;
+  filter: saturate(0.9) brightness(0.72);
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0,0,0,0.6) 10%,
+    #000 22%,
+    #000 78%,
+    rgba(0,0,0,0.6) 90%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0,0,0,0.6) 10%,
+    #000 22%,
+    #000 78%,
+    rgba(0,0,0,0.6) 90%,
+    transparent 100%
+  );
+}
+
+/* ─── Home dark overlay (makes 3D cards pop against background) ── */
+.home-dark-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: rgba(231, 142, 24, 0.08);
+}
+
+/* ─── Home brand watermark text ──────────────────────── */
+.home-brand-text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  /* Sit in the open band above the cards, just below the header */
+  top: 5.5rem;
+  z-index: 9;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  pointer-events: none;
+  animation: page-in 1.4s 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.home-brand-text span {
+  font-size: clamp(2.8rem, 8vw, 6.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  white-space: nowrap;
+  /* Near-black with layered 3D shadow for depth */
+  color: rgba(18, 22, 20, 0.82);
+  text-shadow:
+    1px 1px 0px rgba(18,22,20,0.5),
+    2px 2px 0px rgba(18,22,20,0.4),
+    3px 3px 0px rgba(18,22,20,0.3),
+    4px 4px 0px rgba(18,22,20,0.2),
+    5px 5px 0px rgba(18,22,20,0.1),
+    6px 6px 18px rgba(0,0,0,0.35);
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
+}
+
 /* ─── Content overlays ───────────────────────────────── */
 .site-main {
   position: fixed;
   inset: 0;
-  z-index: 10;
+  z-index: 1;
   pointer-events: none;
 }
 
@@ -722,7 +810,7 @@ body {
   left: 0;
   right: 0;
   bottom: 6.5rem;
-  z-index: -1;
+  z-index: 7;
   text-align: center;
   pointer-events: none;
   padding: 0 1.5rem;
@@ -730,7 +818,7 @@ body {
   font-family: var(--font-geist-sans), sans-serif;
   animation: card-name-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 1%, #000 99%, transparent);
 }
 
 .card-name span {
@@ -739,8 +827,12 @@ body {
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 0.92;
-  text-shadow: 0 4px 60px rgba(14, 154, 126, 0.18);
-  opacity: 0.78;
+  color: rgba(18, 22, 20, 0.75);
+  text-shadow:
+    1px 1px 0 rgba(18,22,20,0.3),
+    2px 2px 0 rgba(18,22,20,0.2),
+    3px 3px 12px rgba(0,0,0,0.25);
+  opacity: 1;
 }
 
 @keyframes card-name-in {
