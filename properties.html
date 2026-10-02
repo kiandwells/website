@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Properties – Kian Dwells</title>
+  <meta name="description" content="Explore all luxury properties available at Kian Dwells – furnished apartments for short and long stays." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body class="page-top">
+
+  <!-- Music Player -->
+  <div id="music-player" aria-label="Background music controls">
+    <audio id="bg-music" loop preload="none"><source src="" type="audio/mpeg" /></audio>
+    <button id="music-toggle" aria-label="Toggle background music" title="Toggle music">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 18V5l12-2v13M9 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm12 0a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="g-navbar" role="navigation" aria-label="Main navigation">
+    <div class="g-navbar__inner">
+      <a class="g-navbar__brand" href="index.html">Kian Dwells</a>
+      <button class="g-navbar__hamburger" aria-label="Toggle menu" aria-expanded="false" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="g-navbar__links" id="nav-links">
+		<li><a href="index.html">Home</a></li>
+        <li><a href="properties.html" class="active">Properties</a></li>
+        <li><a href="amenities.html">Amenities</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="book.html" class="btn-book">Book Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Sub-hero -->
+  <header class="sub-hero">
+    <div class="sub-hero__bg" style="background-image: url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1400&q=80&auto=format');"></div>
+    <div class="sub-hero__content">
+      <p class="sub-hero__eyebrow">Our Portfolio</p>
+      <h1 class="sub-hero__title">Properties</h1>
+    </div>
+  </header>
+
+  <!-- Properties Grid -->
+  <main class="section-container" aria-label="Available properties">
+
+    <!-- The Property -->
+    <p class="section-eyebrow">The Building</p>
+    <h2 class="section-title" style="margin-bottom: 2rem;">The Property</h2>
+    <div class="property-gallery" aria-label="Property exterior and parking" style="margin-bottom: 4rem;">
+      <div class="gallery-item">
+        <img src="/images/front elevation and parking picks/4B_00255 copy.webp" alt="Front elevation" class="gallery-img" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="/images/front elevation and parking picks/4B_00259.webp" alt="Property exterior" class="gallery-img" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="/images/front elevation and parking picks/4B_00265 copyb.webp" alt="Parking area" class="gallery-img" loading="lazy" />
+      </div>
+    </div>
+
+    <p class="section-eyebrow">Available Now</p>
+    <h2 class="section-title">Choose Your Stay</h2>
+
+    <div class="properties-grid">
+
+      <!-- Fortune 2 BHK -->
+      <a class="prop-card" href="fortune.html" aria-label="View Fortune 2 BHK details">
+        <div class="prop-card__img-wrap">
+          <img src="/images/landing page cards/fortune.png" alt="Fortune 2 BHK" class="prop-card__img" loading="lazy" />
+        </div>
+        <div class="prop-card__body">
+          <span class="prop-card__badge">2 BHK</span>
+          <h3 class="prop-card__name">Fortune</h3>
+          <p class="prop-card__desc">A beautifully designed 2-bedroom apartment blending comfort and style. Thoughtfully furnished with premium fittings and modern amenities, Fortune is perfect for intimate stays or working professionals.</p>
+          <span class="prop-card__link">
+            Explore
+            <svg viewBox="0 0 16 16"><path d="M3,8h10M10,5l3,3M10,11l3-3" stroke-linecap="round"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Elite 3 BHK -->
+      <a class="prop-card" href="elite.html" aria-label="View Elite 3 BHK details">
+        <div class="prop-card__img-wrap">
+          <img src="/images/landing page cards/elite.png" alt="Elite 3 BHK" class="prop-card__img" loading="lazy" />
+        </div>
+        <div class="prop-card__body">
+          <span class="prop-card__badge">3 BHK</span>
+          <h3 class="prop-card__name">Elite</h3>
+          <p class="prop-card__desc">Spacious and sophisticated, the Elite 3 BHK offers generous living spaces with premium interiors. Ideal for families or groups seeking refined luxury without compromise.</p>
+          <span class="prop-card__link">
+            Explore
+            <svg viewBox="0 0 16 16"><path d="M3,8h10M10,5l3,3M10,11l3-3" stroke-linecap="round"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Grandeur 3 BHK -->
+      <a class="prop-card" href="grandeur.html" aria-label="View Grandeur 3 BHK details">
+        <div class="prop-card__img-wrap">
+          <img src="/images/landing page cards/grandeur.png" alt="Grandeur 3 BHK" class="prop-card__img" loading="lazy" />
+        </div>
+        <div class="prop-card__body">
+          <span class="prop-card__badge">3 BHK</span>
+          <h3 class="prop-card__name">Grandeur</h3>
+          <p class="prop-card__desc">True to its name, Grandeur is the epitome of opulent living. With high ceilings, designer furnishings, and panoramic views, this apartment sets the benchmark for luxury stays.</p>
+          <span class="prop-card__link">
+            Explore
+            <svg viewBox="0 0 16 16"><path d="M3,8h10M10,5l3,3M10,11l3-3" stroke-linecap="round"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Golden Nest 3 BHK -->
+      <a class="prop-card" href="goldennest.html" aria-label="View Golden Nest 3 BHK details">
+        <div class="prop-card__img-wrap">
+          <img src="/images/landing page cards/golden nest.png" alt="Golden Nest 3 BHK" class="prop-card__img" loading="lazy" />
+        </div>
+        <div class="prop-card__body">
+          <span class="prop-card__badge">3 BHK</span>
+          <h3 class="prop-card__name">Golden Nest</h3>
+          <p class="prop-card__desc">Warm tones and inviting interiors make Golden Nest a home away from home. The 3-bedroom layout offers ample space for relaxation, with every detail curated for your comfort.</p>
+          <span class="prop-card__link">
+            Explore
+            <svg viewBox="0 0 16 16"><path d="M3,8h10M10,5l3,3M10,11l3-3" stroke-linecap="round"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Palace View 1 BHK -->
+      <a class="prop-card" href="palaceview.html" aria-label="View Palace View 1 BHK details">
+        <div class="prop-card__img-wrap">
+          <img src="/images/landing page cards/palace view.png" alt="Palace View 1 BHK" class="prop-card__img" loading="lazy" />
+        </div>
+        <div class="prop-card__body">
+          <span class="prop-card__badge">1 BHK</span>
+          <h3 class="prop-card__name">Palace View</h3>
+          <p class="prop-card__desc">Compact yet lavishly appointed, Palace View is perfect for solo travellers and couples. Enjoy stunning views, a fully equipped kitchen, and the intimate charm of a boutique apartment.</p>
+          <span class="prop-card__link">
+            Explore
+            <svg viewBox="0 0 16 16"><path d="M3,8h10M10,5l3,3M10,11l3-3" stroke-linecap="round"/></svg>
+          </span>
+        </div>
+      </a>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="g-footer">
+    <div class="g-footer__inner">
+      <div class="g-footer__col">
+        <p class="g-footer__brand">Kian Dwells</p>
+        <p class="g-footer__tagline">Luxury Furnished Stays</p>
+      </div>
+      <div class="g-footer__col">
+        <address class="g-footer__address">
+         243, 8th cross, <br />K C Layout, Mysore. 570011<br />
+          <a href="#map" class="g-footer__map-link" id="openMapBtn" role="button">Map</a>
+        </address>
+      </div>
+      <div class="g-footer__col">
+		<a href="tel:+918660544699" class="g-footer__email">+918660544699</a>
+        <a href="mailto:hello@kiandwells.com" class="g-footer__email">hello@kiandwells.com</a>
+      </div>
+    </div>
+    <p class="g-footer__copy">&copy; <span id="year"></span> Kian Dwells. All rights reserved.</p>
+  </footer>
+
+   <!-- Map Modal -->
+  <div class="modal-overlay" id="mapModal" role="dialog" aria-modal="true" aria-labelledby="mapModalTitle" hidden>
+    <div class="modal-box">
+      <button class="modal-close" id="closeMapBtn" aria-label="Close map">&times;</button>
+      <h2 class="modal-title" id="mapModalTitle">Our Location</h2>
+      <div class="modal-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.5591439502823!2d76.68588009999999!3d12.298557599999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baf71001e6fe607%3A0x9836b1c6f7fef98a!2sKian%20Dwells!5e1!3m2!1sen!2sin!4v1790942267802!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+      <p class="modal-addr">243, 8th cross, K C Layout, Mysore. 570011</p>
+    </div>
+  </div>
+
+  <script type="module" src="/src/subpage.js"></script>
+</body>
+</html>

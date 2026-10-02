@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>About Us – Kian Dwells</title>
+  <meta name="description" content="Learn about Kian Dwells – our story, values, and commitment to providing the finest luxury furnished stays." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body class="page-top">
+
+  <!-- Music Player -->
+  <div id="music-player" aria-label="Background music controls">
+    <audio id="bg-music" loop preload="none"><source src="" type="audio/mpeg" /></audio>
+    <button id="music-toggle" aria-label="Toggle background music" title="Toggle music">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 18V5l12-2v13M9 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm12 0a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="g-navbar" role="navigation" aria-label="Main navigation">
+    <div class="g-navbar__inner">
+      <a class="g-navbar__brand" href="index.html">Kian Dwells</a>
+      <button class="g-navbar__hamburger" aria-label="Toggle menu" aria-expanded="false" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="g-navbar__links" id="nav-links">
+		<li><a href="index.html">Home</a></li>
+        <li><a href="properties.html">Properties</a></li>
+        <li><a href="amenities.html">Amenities</a></li>
+        <li><a href="about.html" class="active">About Us</a></li>
+        <li><a href="book.html" class="btn-book">Book Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Sub-hero -->
+  <header class="sub-hero">
+    <div class="sub-hero__bg" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1400&q=80&auto=format');"></div>
+    <div class="sub-hero__content">
+      <p class="sub-hero__eyebrow">Our Story</p>
+      <h1 class="sub-hero__title">About Us</h1>
+    </div>
+  </header>
+
+  <!-- About Content -->
+  <main class="section-container" aria-label="About Kian Dwells">
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="section-eyebrow">Who We Are</p>
+        <h2 class="section-title" style="margin-bottom: 1.5rem;">Crafting Stays Worth<br><em>Remembering</em></h2>
+        <p>Kian Dwells is a curated collection of luxury furnished apartments designed for guests who refuse to settle for ordinary. Every property in our portfolio has been thoughtfully designed to blend the warmth of home with the elegance of a five-star residence.</p>
+        <p>Founded on the belief that your stay should be an experience, not just a transaction, we bring together impeccable design, attentive service, and prime locations to create something truly special.</p>
+        <p>Whether you're here for a short business trip or an extended family vacation, Kian Dwells is your home — elevated.</p>
+        <div class="property-cta" style="margin-top: 2rem;">
+          <a href="properties.html" class="btn-primary">Explore Properties</a>
+          <a href="book.html" class="btn-secondary">Book a Stay</a>
+        </div>
+      </div>
+      <div class="about-img-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80&auto=format"
+          alt="Luxury apartment interior"
+          class="about-img"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="g-footer">
+    <div class="g-footer__inner">
+      <div class="g-footer__col">
+        <p class="g-footer__brand">Kian Dwells</p>
+        <p class="g-footer__tagline">Luxury Furnished Stays</p>
+      </div>
+      <div class="g-footer__col">
+        <address class="g-footer__address">
+         243, 8th cross, <br />K C Layout, Mysore. 570011<br />
+          <a href="#map" class="g-footer__map-link" id="openMapBtn" role="button">Map</a>
+        </address>
+      </div>
+      <div class="g-footer__col">
+		<a href="tel:+918660544699" class="g-footer__email">+918660544699</a>
+        <a href="mailto:hello@kiandwells.com" class="g-footer__email">hello@kiandwells.com</a>
+      </div>
+    </div>
+    <p class="g-footer__copy">&copy; <span id="year"></span> Kian Dwells. All rights reserved.</p>
+  </footer>
+
+   <!-- Map Modal -->
+  <div class="modal-overlay" id="mapModal" role="dialog" aria-modal="true" aria-labelledby="mapModalTitle" hidden>
+    <div class="modal-box">
+      <button class="modal-close" id="closeMapBtn" aria-label="Close map">&times;</button>
+      <h2 class="modal-title" id="mapModalTitle">Our Location</h2>
+      <div class="modal-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.5591439502823!2d76.68588009999999!3d12.298557599999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baf71001e6fe607%3A0x9836b1c6f7fef98a!2sKian%20Dwells!5e1!3m2!1sen!2sin!4v1790942267802!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+      <p class="modal-addr">243, 8th cross, K C Layout, Mysore. 570011</p>
+    </div>
+  </div>
+
+  <script type="module" src="/src/subpage.js"></script>
+</body>
+</html>

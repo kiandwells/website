@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Grandeur 3 BHK – Kian Dwells</title>
+  <meta name="description" content="Grandeur 3 BHK – The epitome of opulent living at Kian Dwells." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body class="page-top">
+
+  <div id="music-player" aria-label="Background music controls">
+    <audio id="bg-music" loop preload="none"><source src="" type="audio/mpeg" /></audio>
+    <button id="music-toggle" aria-label="Toggle background music" title="Toggle music">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 18V5l12-2v13M9 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm12 0a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav class="g-navbar" role="navigation" aria-label="Main navigation">
+    <div class="g-navbar__inner">
+      <a class="g-navbar__brand" href="index.html">Kian Dwells</a>
+      <button class="g-navbar__hamburger" aria-label="Toggle menu" aria-expanded="false" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="g-navbar__links" id="nav-links">
+		<li><a href="index.html">Home</a></li>
+        <li><a href="properties.html" class="active">Properties</a></li>
+        <li><a href="amenities.html">Amenities</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="book.html" class="btn-book">Book Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="sub-hero">
+    <div class="sub-hero__bg" style="background-image: url('/images/grandeur/1.webp');"></div>
+    <div class="sub-hero__content">
+      <p class="sub-hero__eyebrow">3 BHK · Luxury Furnished</p>
+      <h1 class="sub-hero__title">Grandeur</h1>
+    </div>
+  </header>
+
+  <main class="section-container" aria-label="Grandeur property details">
+    <div class="property-description">
+      <p class="section-eyebrow">Property Overview</p>
+      <h2 class="section-title" style="margin-bottom: 1.5rem;">Grandeur 3 BHK</h2>
+      <p>Grandeur lives up to every letter of its name. This flagship 3-bedroom apartment is designed for those who demand nothing less than the finest — from the double-height ceilings in the living room to the custom-built cabinetry throughout.</p>
+      <p>Each of the three bedrooms is a sanctuary in itself, while the expansive dining and lounge area sets the scene for memorable evenings. The designer kitchen is equipped for everything from a quiet breakfast to a lavish dinner party.</p>
+      <p>With panoramic views, state-of-the-art appliances, and Kian Dwells' signature housekeeping service, Grandeur is where luxury living reaches its natural peak.</p>
+    </div>
+
+    <div class="property-gallery" aria-label="Grandeur apartment gallery">
+      <div class="gallery-item">
+        <img src="/images/grandeur/1.webp" alt="Grandeur living room" class="gallery-img" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="/images/grandeur/2.webp" alt="Grandeur master bedroom" class="gallery-img" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="/images/grandeur/3.webp" alt="Grandeur kitchen" class="gallery-img" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="/images/grandeur/4.webp" alt="Grandeur dining area" class="gallery-img" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="/images/grandeur/5.webp" alt="Grandeur second bedroom" class="gallery-img" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="/images/grandeur/6.webp" alt="Grandeur view" class="gallery-img" loading="lazy" />
+      </div>
+    </div>
+
+    <div class="property-cta">
+      <a href="book.html?property=grandeur" class="btn-primary">Book This Property</a>
+      <a href="properties.html" class="btn-secondary">All Properties</a>
+    </div>
+  </main>
+
+  <footer class="g-footer">
+    <div class="g-footer__inner">
+      <div class="g-footer__col">
+        <p class="g-footer__brand">Kian Dwells</p>
+        <p class="g-footer__tagline">Luxury Furnished Stays</p>
+      </div>
+      <div class="g-footer__col">
+        <address class="g-footer__address">
+         243, 8th cross, <br />K C Layout, Mysore. 570011<br />
+          <a href="#map" class="g-footer__map-link" id="openMapBtn" role="button">Map</a>
+        </address>
+      </div>
+      <div class="g-footer__col">
+		<a href="tel:+918660544699" class="g-footer__email">+918660544699</a>
+        <a href="mailto:hello@kiandwells.com" class="g-footer__email">hello@kiandwells.com</a>
+      </div>
+    </div>
+    <p class="g-footer__copy">&copy; <span id="year"></span> Kian Dwells. All rights reserved.</p>
+  </footer>
+
+  <div class="modal-overlay" id="mapModal" role="dialog" aria-modal="true" aria-labelledby="mapModalTitle" hidden>
+    <div class="modal-box">
+      <button class="modal-close" id="closeMapBtn" aria-label="Close map">&times;</button>
+      <h2 class="modal-title" id="mapModalTitle">Our Location</h2>
+      <div class="modal-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.5591439502823!2d76.68588009999999!3d12.298557599999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baf71001e6fe607%3A0x9836b1c6f7fef98a!2sKian%20Dwells!5e1!3m2!1sen!2sin!4v1790942267802!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+      <p class="modal-addr">243, 8th cross, K C Layout, Mysore. 570011</p>
+    </div>
+  </div>
+
+  <script type="module" src="/src/subpage.js"></script>
+</body>
+</html>
