@@ -1,6 +1,6 @@
 /* ============================================================
    BOOK NOW PAGE JS – form validation + WhatsApp
-   ============================================================ */
+============================================================ */
 import './shared.css';
 import './book.css';
 import './shared.js';
@@ -34,17 +34,18 @@ function formatDMY(dateStr) {
 const today = new Date().toISOString().split('T')[0];
 
 // ── Wire up date inputs with min constraints ──────────────────
-const checkinInput  = document.getElementById('checkin');
+const checkinInput = document.getElementById('checkin');
 const checkoutInput = document.getElementById('checkout');
 
 if (checkinInput) {
-  checkinInput.min  = today;
+  checkinInput.min = today;
   checkinInput.addEventListener('change', () => {
     if (checkoutInput) {
       // Checkout must be at least the day after check-in
       const cin = new Date(checkinInput.value);
       cin.setDate(cin.getDate() + 1);
       checkoutInput.min = cin.toISOString().split('T')[0];
+
       // Clear checkout if it's now invalid
       if (checkoutInput.value && checkoutInput.value <= checkinInput.value) {
         checkoutInput.value = '';
@@ -68,6 +69,7 @@ function showError(input, msg) {
   }
 }
 
+// Clear errors on input
 function clearError(input) {
   input.classList.remove('error');
   const errEl = input.closest('.form-group')?.querySelector('.form-error');
@@ -75,14 +77,13 @@ function clearError(input) {
 }
 
 function validateEmail(email) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+\$/.test(email);
 }
 
 function validatePhone(phone) {
-  return /^[0-9\s\-\+]{7,15}$/.test(phone.trim());
+  return /^[0-9\s\-\+]{7,15}\$/.test(phone.trim());
 }
 
-// Clear errors on input
 form.querySelectorAll('input, select').forEach(el => {
   el.addEventListener('input', () => clearError(el));
 });
@@ -91,12 +92,12 @@ form.querySelectorAll('input, select').forEach(el => {
 form.addEventListener('submit', e => {
   e.preventDefault();
 
-  const name     = document.getElementById('name');
-  const email    = document.getElementById('email');
+  const name = document.getElementById('name');
+  const email = document.getElementById('email');
   const dialCode = document.getElementById('dialCode');
-  const phone    = document.getElementById('phone');
+  const phone = document.getElementById('phone');
   const interest = document.getElementById('interest');
-  const checkin  = document.getElementById('checkin');
+  const checkin = document.getElementById('checkin');
   const checkout = document.getElementById('checkout');
 
   let valid = true;
@@ -151,10 +152,16 @@ form.addEventListener('submit', e => {
 
   if (!valid) return;
 
+  // ── Calculate Stay Duration ───────────────────────────────
+  const date1 = new Date(checkin.value);
+  const date2 = new Date(checkout.value);
+  const timeDiff = date2.getTime() - date1.getTime();
+  const totalNights = Math.round(timeDiff / (1000 * 3600 * 24));
+
   // ── Build WhatsApp message ────────────────────────────────
   const fullPhone = `${dialCode.value}${phone.value.trim().replace(/^0+/, '')}`;
-  const cinFmt    = formatDMY(checkin.value);
-  const coutFmt   = formatDMY(checkout.value);
+  const cinFmt = formatDMY(checkin.value);
+  const coutFmt = formatDMY(checkout.value);
 
   const msg = [
     `*New Booking Enquiry*`,
@@ -164,9 +171,11 @@ form.addEventListener('submit', e => {
     `Interested In: ${interest.options[interest.selectedIndex].text}`,
     `Check-in: ${cinFmt}`,
     `Check-out: ${coutFmt}`,
+    `Duration: ${totalNights} night${totalNights > 1 ? 's' : ''}`
   ].join('\n');
 
   const waNumber = '918660544699'; // +91 866 054 4699
   const waURL = `https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`;
+
   window.open(waURL, '_blank', 'noopener,noreferrer');
 });
