@@ -57,6 +57,45 @@
   padding: clamp(3rem, 7vw, 6rem) clamp(1.25rem, 5vw, 4rem);
 }
 
+/* ── BHK filters (Properties page) ── */
+.prop-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: clamp(1.5rem, 3vw, 2rem);
+}
+
+.prop-filter {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  background: transparent;
+  border: 1px solid rgba(10, 10, 10, 0.18);
+  border-radius: var(--radius-btn);
+  padding: 0.5rem 1.15rem;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.prop-filter:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.prop-filter.is-active {
+  background: var(--color-black);
+  border-color: var(--color-black);
+  color: var(--color-gold);
+}
+
+.prop-filter:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
 /* ── Property cards (Properties page) ── */
 .properties-grid {
   display: grid;
@@ -147,6 +186,8 @@
 }
 
 .prop-card:hover .prop-card__link { gap: 0.7rem; }
+
+.prop-card[hidden] { display: none; }
 
 .prop-card__link svg {
   width: 14px; height: 14px;

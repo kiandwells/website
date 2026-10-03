@@ -69,10 +69,17 @@
     <p class="section-eyebrow">Available Now</p>
     <h2 class="section-title">Choose Your Stay</h2>
 
+    <div class="prop-filters" role="group" aria-label="Filter properties by configuration">
+      <button type="button" class="prop-filter is-active" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" class="prop-filter" data-filter="1" aria-pressed="false">1 BHK</button>
+      <button type="button" class="prop-filter" data-filter="2" aria-pressed="false">2 BHK</button>
+      <button type="button" class="prop-filter" data-filter="3" aria-pressed="false">3 BHK</button>
+    </div>
+
     <div class="properties-grid">
 
       <!-- Fortune 2 BHK -->
-      <a class="prop-card" href="fortune.html" aria-label="View Fortune 2 BHK details">
+      <a class="prop-card" data-bhk="2" href="fortune.html" aria-label="View Fortune 2 BHK details">
         <div class="prop-card__img-wrap">
           <img src="/images/landing page cards/fortune.png" alt="Fortune 2 BHK" class="prop-card__img" loading="lazy" />
         </div>
@@ -88,7 +95,7 @@
       </a>
 
       <!-- Elite 3 BHK -->
-      <a class="prop-card" href="elite.html" aria-label="View Elite 3 BHK details">
+      <a class="prop-card" data-bhk="3" href="elite.html" aria-label="View Elite 3 BHK details">
         <div class="prop-card__img-wrap">
           <img src="/images/landing page cards/elite.png" alt="Elite 3 BHK" class="prop-card__img" loading="lazy" />
         </div>
@@ -104,7 +111,7 @@
       </a>
 
       <!-- Grandeur 3 BHK -->
-      <a class="prop-card" href="grandeur.html" aria-label="View Grandeur 3 BHK details">
+      <a class="prop-card" data-bhk="3" href="grandeur.html" aria-label="View Grandeur 3 BHK details">
         <div class="prop-card__img-wrap">
           <img src="/images/landing page cards/grandeur.png" alt="Grandeur 3 BHK" class="prop-card__img" loading="lazy" />
         </div>
@@ -120,7 +127,7 @@
       </a>
 
       <!-- Golden Nest 3 BHK -->
-      <a class="prop-card" href="goldennest.html" aria-label="View Golden Nest 3 BHK details">
+      <a class="prop-card" data-bhk="3" href="goldennest.html" aria-label="View Golden Nest 3 BHK details">
         <div class="prop-card__img-wrap">
           <img src="/images/landing page cards/golden nest.png" alt="Golden Nest 3 BHK" class="prop-card__img" loading="lazy" />
         </div>
@@ -136,7 +143,7 @@
       </a>
 
       <!-- Palace View 1 BHK -->
-      <a class="prop-card" href="palaceview.html" aria-label="View Palace View 1 BHK details">
+      <a class="prop-card" data-bhk="1" href="palaceview.html" aria-label="View Palace View 1 BHK details">
         <div class="prop-card__img-wrap">
           <img src="/images/landing page cards/palace view.png" alt="Palace View 1 BHK" class="prop-card__img" loading="lazy" />
         </div>
