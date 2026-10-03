@@ -369,6 +369,7 @@
   }
 
   .float-nav__label { min-width: 70px; font-size: 0.7rem; }
+     .float-nav { display: none; }
 }
 
 @media (max-width: 400px) {
